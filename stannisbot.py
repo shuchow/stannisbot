@@ -10,6 +10,9 @@ except:
 
 abstract_nouns = []
 concrete_nouns = []
+abstract_nouns_file = "/absolute/path/to/stannisbot/abstract_nouns.txt"
+concrete_nouns_file = "/absolute/path/to/stannisbot/concrete_nouns.txt"
+
 STANNISBOT_NAME    = "stannisbot"
 STANNISBOT_AUTHOR  = "Shu-Wai Chow <schow@alumni.rutgers.edu>"
 STANNISBOT_VERSION = "0.1.0"
@@ -46,7 +49,7 @@ def catch_message(data, bufferp, tm, tags, display, is_hilight, prefix, msg):
 
     if caught is True:
         if textblob_analysis(msg) is True:
-            #w rite fewer
+            #write fewer
             w.command(bufferp, "Stannisbot: fewer")
 
     return w.WEECHAT_RC_OK
@@ -64,6 +67,7 @@ def has_less(message):
 
 
 def textblob_analysis(message):
+    logging.debug(abstract_nouns)
     evaluate_after_less = False
 
     try:
@@ -109,7 +113,6 @@ if __name__ == "__main__":
     global abstract_nouns
     global concrete_nouns
 
-    #/join #bot-dev         /script load ~/Development/stannisbot/stannisbot.py
     logging.basicConfig(filename='/tmp/stannisbotout.log', level=logging.DEBUG)
 
     w.register(STANNISBOT_NAME, STANNISBOT_AUTHOR, STANNISBOT_VERSION, STANNISBOT_LICENSE, STANNISBOT_DESC, STANNISBOT_CLOSE, "")
@@ -118,20 +121,8 @@ if __name__ == "__main__":
     w.hook_print("", "", "", 1, "catch_message", "")
 
     #Hrmmm.... Weechat's not letting this import.
-    abstract_nouns = [
-        'ability',
-        'absolution',
-        'absurdity',
-        'acceptance',
-        'accomplishment',
-        'achievement',
-        'adequacy',
-        'admiration',
-        'adoration',
-    ]
+    with open(abstract_nouns_file) as f:
+        abstract_nouns = [x.strip('\n') for x in f.readlines()]
 
-    #A whitelist, if you will.
-    concrete_nouns = [
-        'carbs',
-        "frlllded",
-    ]
+    with open(concrete_nouns_file) as f:
+        concrete_nouns = [x.strip('\n') for x in f.readlines()]
