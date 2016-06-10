@@ -14,11 +14,11 @@ Weechat, though, works as just another Slack client.  You can write a script to 
 
 #How do I use it?
 
-1) Install Weechat.
-2) Follow Calle Erlandsson's instructions (https://robots.thoughtbot.com/weechat-for-slacks-irc-gateway) for "Connecting to Slack"
-3) Download the script (stannsibot.py) and the abstract/concrete nouns list.
-4) Configure the script with the absolute paths to the abstract and concrete nouns (lines 13 and 14) override the log directory if desired (line 116).
-5) Fire up weechat.
-6) Join a channel (/join #random)
-7) Register stannisbot! (/script load path/to/stannisbot.py)
-8) Profit!
+1. Install Weechat.
+2. Follow Calle Erlandsson's instructions (https://robots.thoughtbot.com/weechat-for-slacks-irc-gateway) for "Connecting to Slack"
+3.Download the script (stannsibot.py) and the abstract/concrete nouns list.
+4. Configure the script with the absolute paths to the abstract and concrete nouns (lines 13 and 14) override the log directory if desired (line 116).
+5. Fire up weechat.
+6. Join a channel (/join #random)
+7. Register stannisbot! (/script load path/to/stannisbot.py)
+8. Profit!
