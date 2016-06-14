@@ -1,4 +1,4 @@
-# stannisbot - What in the World is This?
+# stannisbot - What in the world is this?
 
 This is a weechat script to correct a person's improrper usage of "less."  Using weechat (http://www.weechat.org) it monitors a Slack or IRC channel to see if someone needs to be corrected.
 
@@ -8,7 +8,7 @@ I wanted to build a bot to correct my coworkers in our Slack channel.
 
 #Why not just use a webhook?
 
-A Slack webhook requires a server somewhere to run the bot.  This is problematic for me.  At work, we isolate clients, so I can't run the bot on the network.  I *could* run the bot outside of the network, but it'd be a pretty dumb move to send company conversations across the internet.
+A Slack webhook requires a server somewhere to run the bot.  This is problematic for me.  At work, we isolate clients, so I can't run the bot on the network.  I *could* run the bot outside of the network, but it'd be bad form to send company conversations across the internet.
 
 Weechat, though, works as just another Slack client.  You can write a script to process the incoming message buffer and send messages on the buffer.
 
@@ -21,4 +21,4 @@ Weechat, though, works as just another Slack client.  You can write a script to 
 5. Fire up weechat.
 6. Join a channel (/join #random)
 7. Register stannisbot! (/script load path/to/stannisbot.py)
-8. Profit!
+8. Profit!  Get booed at by coworkers!
