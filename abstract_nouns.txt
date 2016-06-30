@@ -93,6 +93,7 @@ choice
 christianity
 citizenship
 class
+clear
 cleverness
 clumsiness
 coldness
@@ -139,6 +140,7 @@ cunning
 curiosity
 danger
 death
+decipherable
 defiance
 dejection
 delicacy
@@ -378,3 +380,4 @@ wit
 wellness
 wisdom
 womanhood
+work
