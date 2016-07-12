@@ -94,7 +94,7 @@ def textblob_analysis(message):
                 return True
 
         if (evaluate_after_less is True) and (tag == 'NN' or tag == 'NNS'):
-            if is_abstract_noun(word) == False:
+            if is_abstract_noun(word) is False:
                 return True
 
         evaluate_after_less = False
