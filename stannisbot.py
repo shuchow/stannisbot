@@ -15,7 +15,7 @@ concrete_nouns_file = "/absolute/path/to/stannisbot/concrete_nouns.txt"
 
 STANNISBOT_NAME    = "stannisbot"
 STANNISBOT_AUTHOR  = "Shu-Wai Chow <schow@alumni.rutgers.edu>"
-STANNISBOT_VERSION = "0.1.0"
+STANNISBOT_VERSION = "0.1.1"
 STANNISBOT_LICENSE = "GPL3"
 STANNISBOT_CLOSE   = "close_log"
 STANNISBOT_DESC    = "A Stannis Baratheon Bot."
@@ -56,11 +56,8 @@ def catch_message(data, bufferp, tm, tags, display, is_hilight, prefix, msg):
 
 
 def has_less(message):
-    message = message.upper()
-
-    if message.find(" LESS ") > -1:
-        return True
-    elif re.match(r"^Less", message, flags=re.I) is not None:
+    if re.search(r"\bless\b", message, flags=re.I):
+        #"Less" in the message.
         return True
     else:
         return False
@@ -110,9 +107,6 @@ def is_concrete_noun(word):
     return True if word in concrete_nouns else False
 
 if __name__ == "__main__":
-    global abstract_nouns
-    global concrete_nouns
-
     logging.basicConfig(filename='/tmp/stannisbotout.log', level=logging.DEBUG)
 
     w.register(STANNISBOT_NAME, STANNISBOT_AUTHOR, STANNISBOT_VERSION, STANNISBOT_LICENSE, STANNISBOT_DESC, STANNISBOT_CLOSE, "")
