@@ -1,6 +1,6 @@
 # stannisbot - What in the world is this?
 
-This is a weechat script to correct a person's improrper usage of "less."  Using weechat (http://www.weechat.org) it monitors a Slack or IRC channel to see if someone needs to be corrected.
+This is a weechat script to correct a person's improrper usage of "less."  Using weechat (http://www.weechat.org) it monitors a Slack or IRC channel to see if someone needs to be corrected.  It uses Python's textblob NLP library to determine if the word after "less" is a noun, and then an abstract noun whitelist/blacklist to determine if correction is needed.
 
 #Why???
 
